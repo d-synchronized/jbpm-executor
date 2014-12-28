@@ -21,10 +21,7 @@ public class ExecutorModule {
     private ExecutorModule() {
         weld = new Weld();
         this.container = weld.initialize();
-
         this.executorService = this.container.instance().select(ExecutorServiceEntryPointImpl.class).get();
-        // Singleton.. that we need to instantiate
-        // this.container.instance().select(TaskLifeCycleEventListener.class).get();
     }
 
     public ExecutorServiceEntryPoint getExecutorServiceEntryPoint() {
