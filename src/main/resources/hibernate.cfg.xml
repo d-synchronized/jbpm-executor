@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <property name="pre-insert">uk.co.techblue.util.PreInsertListener</property>
+        <property name="hibernate.jacc.enabled">true</property>
+<!--         <grant role="admin" entity-name="Employee" actions="insert,update,read"/> -->
+
+        <mapping class="uk.co.techblue.entity.Employee"/>
+        <mapping class="uk.co.techblue.entity.Address"/>
+	</session-factory>
+</hibernate-configuration>
